@@ -1,7 +1,7 @@
 
 # ReAct Agent on Multi-Hop RAG QA
 
-The ReAct Agent is a dynamic agent designed to process queries, interact with a set of predefined tools, and generate responses using a language model. This agent maintains a history of interactions to provide context-aware responses and utilizes different tools to perform specific actions based on the input query.
+The ReAct Agent is a dynamic agent designed to process queries, interact with a set of predefined tools, and generate responses using a language model. This agent maintains a history of interactions to provide context-aware responses and utilizes different tools to perform specific actions based on the input query. The dataset used here is the [Multi-Hop RAG dataset](https://github.com/yixuantt/MultiHop-RAG) 
 
 ## Installation
 
@@ -62,24 +62,24 @@ The agent will process the query, interact with the tools, and provide the final
 Here is an example of how to initialize and run the ReAct agent:
 
 ```python
-from tools import MyTool (Import any tool that you want)
+from tools import Retrieve, AskHuman, Finish
 from llms import loadllm
 from react_agent import ReAct
 
 # Initialize the tool
-tools = [MyTool()]
+tools = [Retrieve(3), AskHuman(), Finish()]
 
 # Initialize history
 history = []
 
-# Initialize the language model
-llm = loadllm("Groq/Ollama/OpenAI")
+# Initialize the language model (llama3-70B)
+llm = loadllm("Groq")
 
 # Create an instance of the ReAct agent
 react_agent = ReAct(tools, history, llm, max_steps=10)
 
 # Run a query
-query = "Tell me about the history of AI."
+query = "Which company, reported by The Verge and TechCrunch, has been associated with altering the internet's appearance, influencing Android app distribution and in-app payment systems, being the sole valid search engine service option for a major tech competitor, and is accused of harming news publishers' revenues through anticompetitive practices?" # A question from the dataset
 react_agent.agentloop(query)
 ```
 
