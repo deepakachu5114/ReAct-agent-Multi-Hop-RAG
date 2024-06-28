@@ -3,20 +3,12 @@
 
 The ReAct Agent is a dynamic agent designed to process queries, interact with a set of predefined tools, and generate responses using a language model. This agent maintains a history of interactions to provide context-aware responses and utilizes different tools to perform specific actions based on the input query.
 
-## Features
-
-- Utilizes multiple tools for handling various actions.
-- Maintains a history of interactions for context-aware processing.
-- Handles JSON response decoding with retry mechanisms.
-- Logs key events and errors for debugging and monitoring.
-- Configurable maximum number of steps for query processing.
-
 ## Installation
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/deepakachu5114/ReAct-agent-Multi-Hop-RAG.git
-    cd ReAct-agent-Multi-Hop-RAG.git
+    git clone https://github.com/deepakachu5114/ReAct-agent-Multi-Hop-RAG
+    cd ReAct-agent-Multi-Hop-RAG
     ```
 
 2. Install the required dependencies:
