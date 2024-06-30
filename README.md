@@ -93,10 +93,10 @@ You can customize the ReAct agent by:
 
 ### Adding a New Tool
 
-To add a new tool, create a class with a `run` method and add it to the tools list during initialization:
+To add a new tool, make sure it inherits the `Tool` class and create a class with a `run` method and add it to the tools list during initialization:
 
 ```python
-class NewTool:
+class NewTool(Tool):
     def run(self, input):
         """Your tool's functionality here"""
         return "Tool response"
