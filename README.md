@@ -108,7 +108,7 @@ tools = [NewTool()]
 
 ## Logging
 
-The ReAct agent uses the `logger` from `logger_config` to log key events and errors. Ensure you have configured the logger properly in `logger_config.py` to capture and store logs as needed.
+The ReAct agent uses the `logger` from `logger_config` to log key events and errors. You can configure the logger to print the alerts on console, typically logs will be stored in `logs/app.log`
 
 
 ## License
